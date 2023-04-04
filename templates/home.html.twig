@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GenreController!{% endblock %}
+
+{% block body %}
+<h1 class="text-center">Genres </h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4 ms-2 mt-5">
+        {% for genre in genres %}
+            <div class="col text-center">
+
+                <div class="card h-100" style="border: none" >
+
+                    <div class="card-body">
+                        <a href="{{ path('product_show', {id: genre.id}) }}">{{ genre.name }}</a>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
